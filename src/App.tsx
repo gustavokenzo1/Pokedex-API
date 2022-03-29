@@ -11,10 +11,11 @@ function App() {
     const [weight, setWeight] = useState(0);
     const [stats, setStats] = useState<any[]>([]);
     const [searchPokemon, setSearchPokemon] = useState("");
+    const [errorMessage, setErrorMessage] = useState("");
 
     useEffect(() => {
-        handlePokemon(1)
-        setCurrent(1)
+        handlePokemon(1);
+        setCurrent(1);
     }, []);
 
     const handleNextPokemon = async () => {
@@ -30,24 +31,32 @@ function App() {
     };
 
     const handlePokemon = async (pokemon: any) => {
-        setLoading(true);
-        const response = await axios.get(
-            `https://pokeapi.co/api/v2/pokemon/${pokemon}`
-        );
-        setName(response.data.name);
-        let typesArray: string[] = [];
-        response.data.types.map((type: any) => {
-            typesArray.push(type.type.name);
-        });
-        setTypes(typesArray);
-        let statsArray: any[] = [];
-        response.data.stats.map((stat: any) => {
-            statsArray.push(stat);
-        });
-        setStats(statsArray);
-        setWeight(response.data.weight);
-        setImg(response.data.sprites.other["official-artwork"].front_default);
-        setLoading(false);
+        try {
+            setErrorMessage("");
+            setLoading(true);
+            const response = await axios.get(
+                `https://pokeapi.co/api/v2/pokemon/${pokemon}`
+            );
+            setName(response.data.name);
+            let typesArray: string[] = [];
+            response.data.types.map((type: any) => {
+                typesArray.push(type.type.name);
+            });
+            setTypes(typesArray);
+            let statsArray: any[] = [];
+            response.data.stats.map((stat: any) => {
+                statsArray.push(stat);
+            });
+            setStats(statsArray);
+            setWeight(response.data.weight);
+            setImg(
+                response.data.sprites.other["official-artwork"].front_default
+            );
+            setLoading(false);
+        } catch (error) {
+            setErrorMessage("Esse pokémon não existe!");
+            setLoading(false);
+        }
     };
 
     const handleInput = (event: any) => {
@@ -61,7 +70,9 @@ function App() {
     return (
         <div className="pokePage">
             <div className="container">
-                <h1 className="title">Pokédex API</h1>
+                <h1 className="title">
+                    <a href="https://pokeapi.co/">Pokédex API</a>
+                </h1>
                 <div className="pokedex">
                     <div className="pokedexTop">
                         <span className="circle">
@@ -76,20 +87,26 @@ function App() {
                     <span className="upperLine"></span>
                     <div className="pokedexCenter">
                         <div className="display">
-                            {loading ? (
-                                "Loading..."
+                            {errorMessage.length > 1 ? (
+                                <div className="error">{errorMessage}</div>
                             ) : (
                                 <>
-                                    <div className="pokemonName">
-                                        {" "}
-                                        {name.charAt(0).toUpperCase() +
-                                            name.slice(1)}{" "}
-                                    </div>
-                                    <img
-                                        className="pokemonImage"
-                                        src={img}
-                                        alt="pokemon"
-                                    />
+                                    {loading ? (
+                                        "Loading..."
+                                    ) : (
+                                        <>
+                                            <div className="pokemonName">
+                                                {" "}
+                                                {name.charAt(0).toUpperCase() +
+                                                    name.slice(1)}{" "}
+                                            </div>
+                                            <img
+                                                className="pokemonImage"
+                                                src={img}
+                                                alt="pokemon"
+                                            />
+                                        </>
+                                    )}
                                 </>
                             )}
                         </div>
