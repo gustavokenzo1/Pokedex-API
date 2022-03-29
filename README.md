@@ -20,3 +20,5 @@ This project will be given to them as a challenge, after they have completed the
 - Use external libraries (such as axios) to connect to the API (although they don't need to use an external library, axios is recommended, since it's what we use)
 - Async functions to wait for the requisitions
 - Display information saved on a state on the page itself (such as the pokémon name)
+- Requests (in this case, we only need to use a GET request)
+- Study an API documentation and understand what information they receive and how to manipulate a JSON to get relevant information
