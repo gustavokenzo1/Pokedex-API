@@ -1,38 +1,330 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(230, 230, 230);
+    color: #fff;
+    font-family: "Rubik", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.pokePage {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 50vw;
+    margin-left: 25vw;
+    margin-top: 5vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.title {
+    color: #ff6961;
+    font-size: 2vw;
+    margin-bottom: 50px;
 }
 
-.App-link {
-  color: #61dafb;
+.pokedex {
+    max-height: 700px;
+    max-width: 400px;
+    height: 90vh;
+    width: 75vw;
+    background-color: #ff6961;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    box-shadow: #c42a22 2px 2px 4px 4px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.pokedexTop {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px;
+    background-color: transparent;
+    align-self: flex-start;
+}
+
+.circle {
+    background-color: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.insideCircle {
+    background-color: rgb(52, 133, 255);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.redCircle,
+.yellowCircle,
+.greenCircle {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    align-self: flex-start;
+    margin-left: 5px;
+}
+
+.redCircle {
+    margin-left: 20px;
+    background-color: red;
+}
+
+.yellowCircle {
+    background-color: yellow;
+}
+
+.greenCircle {
+    background-color: green;
+}
+
+.lowerLine {
+    height: 2px;
+    width: 165px;
+    background-color: #c42a22;
+    align-self: flex-start;
+    box-shadow: #c42a22 0px 3px 4px 2px;
+}
+
+.upperLine {
+    height: 2px;
+    width: 202px;
+    background-color: #c42a22;
+    align-self: flex-end;
+    transform: translateY(-39px);
+    box-shadow: #c42a22 0px 3px 4px 2px;
+}
+
+.diagonalLine {
+    height: 2px;
+    width: 50px;
+    background-color: #c42a22;
+    rotate: -45deg;
+    transform: translateY(-27px);
+    box-shadow: #c42a22 0px 3px 4px 2px;
+}
+
+.pokedexCenter {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 295px;
+    max-height: 340px;
+    width: 75%;
+    height: 75%;
+    display: flex;
+    border-radius: 10px;
+    box-shadow: #c42a22 0px 3px 4px;
+    background-color: #444;
+}
+
+.display {
+    max-width: 250px;
+    max-height: 290px;
+    width: 90%;
+    height: 90%;
+    border-radius: 10px;
+    box-shadow: #000 0px 2px 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: url("./assets/background.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.pokemonName {
+    font-size: 20px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 30px;
+    box-shadow: #000 0px 2px 4px;
+    background-color: #ff6961a9;
+    padding: 8px;
+    border-radius: 10px;
+}
+
+.pokemonImage {
+    max-width: 150px;
+    margin-top: 10px;
+    width: 100%;
+    background-color: transparent;
+}
+
+.pokedexBottom {
+    max-width: 400px;
+    max-height: 100px;
+    margin-top: 35px;
+    display: flex;
+    width: 90%;
+    background-color: transparent;
+    margin-left: 40px;
+}
+
+.bottomCircle {
+    background-color: #333;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-left: 30px;
+    box-shadow: #000 0px 3px 4px;
+}
+
+.rectangles {
+    max-width: 125px;
+    max-height: 75px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+}
+
+.topRectangles {
+    display: flex;
+    background-color: transparent;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.rectangleRed {
+    background-color: red;
+    width: 40px;
+    height: 5px;
+    border-radius: 10px;
+}
+
+.rectangleBlue {
+    background-color: blue;
+    width: 40px;
+    height: 5px;
+    border-radius: 10px;
+}
+
+.rectangleGreen {
+    background-color: #77dd77;
+    width: 100px;
+    height: 50px;
+    border-radius: 5px;
+    align-self: center;
+    margin-top: 10px;
+    box-shadow: #498849 0px 3px 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    text-align: center;
+    cursor: pointer;
+}
+
+.arrows {
+    max-width: 75px;
+    max-height: 75px;
+    display: flex;
+    margin-left: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.arrowUp,
+.arrowDown,
+.arrowLeft,
+.arrowRight,
+.arrowCenter {
+    width: 25px;
+    height: 25px;
+    background-color: #333;
+    cursor: pointer;
+}
+
+.verticalArrows {
+    height: 75px;
+    width: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.horizontalArrows {
+    height: 25px;
+    width: 75px;
+    display: flex;
+    position: absolute;
+    align-self: center;
+}
+
+.search {
+    margin: 50px;
+    background-color: transparent;
+}
+
+input {
+    width: 100%;
+    height: 20px;
+    border-radius: 5px;
+    border: 1px solid #fc4f46;
+    box-shadow: #830700 0px 2px 2px;
+    color: #333;
+    padding: 5px;
+    outline: none;
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #333;
+    margin-left: 100px;
+}
+
+ul {
+    list-style-type: none;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+li {
+    color: #333;
+    margin-top: 5px;
+}
+
+.statsBar {
+    height: 8px;
+    border-radius: 10px;
+    width: 255px;
+    background-color: #777;
+    margin-bottom: 10px;
+}
+
+.statsBarFill {
+    height: 8px;
+    border-radius: 10px;
+    width: 0px;
+}
+
+@media screen and (width < 800px) {
+    .pokePage {
+        flex-direction: column;        
+    }
+
+    .about {
+        margin-left: 0px;
+        margin-top: 50px;
+    }
 }
