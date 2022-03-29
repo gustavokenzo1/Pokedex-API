@@ -7,7 +7,8 @@ This project uses:
 - TypeScript
 - PokeAPI (https://pokeapi.co/)
 
-This project can be tested on https://gustavokenzo1.github.io/Pokedex-API/
+This project can be tested on https://gustavokenzo1.github.io/Pokedex-API/ . You can click the left and right arrows to navigate trough the pokemons.
+You can also click on the top and bottom arrows, but they won't do anything lmao.
 
 ## Goals
 
