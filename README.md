@@ -1,46 +1,22 @@
-# Getting Started with Create React App
+# Pokedex API
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was created with the goal of understanding what skills future trainees at Orc'estra Gamificação will have to apply and learn during their trainee process!
 
-## Available Scripts
+This project uses:
+- ReactJS
+- TypeScript
+- PokeAPI (https://pokeapi.co/)
 
-In the project directory, you can run:
+This project can be tested on https://gustavokenzo1.github.io/Pokedex-API/
 
-### `npm start`
+## Goals
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+This project will be given to them as a challenge, after they have completed their React curriculum. That's why we are using an external API, so that they get in touch with concepts such as connecting to a REST API and making requisitions, to show the information received on the front-end, without them having to create their own back-end.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## What they'll learn
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Improve skills from the first project (ReactJS, HTML, CSS)
+- Basic React Hooks (useState, useEffect), so they can manipulate states (store and updated information)
+- Use external libraries (such as axios) to connect to the API (although they don't need to use an external library, axios is recommended, since it's what we use)
+- Async functions to wait for the requisitions
+- Display information saved on a state on the page itself (such as the pokémon name)
